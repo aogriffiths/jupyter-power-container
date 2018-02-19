@@ -1,0 +1,152 @@
+numpy
+ # https://www.numpy.org/
+ # Numerical computation package. It defines multidimensional
+ # numerical array and matrix types and basic fast, mathematical operations on
+ # them.
+
+scipy
+ # https://www.scipy.org/
+ # Scientific computing package for numerical algorithms, signal processing,
+ # optimization, statistics and more.
+
+pandas
+ # http://pandas.pydata.org/
+ # high-performance, easy-to-use data structures and data analysis tools. Built
+ # using NumPy, good for handling missing data and similar manipulations.
+
+ipython
+ # http://ipython.org/
+ # Enhanced interactive python interface, letting you quickly process data and
+ # test ideas.
+
+jupyter_contrib_nbextensions
+ # https://github.com/ipython-contrib/jupyter_contrib_nbextensions
+ # Extensions that add functionality to the Jupyter notebook. These extensions
+ # are mostly written in Javascript and will be loaded locally in your browser.
+
+jupyter_nbextensions_configurator
+ # https://github.com/Jupyter-contrib/jupyter_nbextensions_configurator
+ # graphical user interfaces for configuring which nbextensions are enabled (load
+ # automatically for every notebook).
+
+matplotlib
+ # https://matplotlib.org/
+ # De-facto 2D plotting libary like line graphs, pie charts, histograms, etc and
+ # basic 3D plotting. Can export to PDF, SVG, JPG, PNG, BMP, GIF, etc.
+ # Run `%matplotlib inline` to get inline plots, for `%matplotlib notebook` to
+ # get interactive plots
+
+seaborn
+ # https://seaborn.pydata.org/
+ # uses matplotlib to provide more attractive. Just by importing Seaborn makes
+ # matplotlib plots look better.
+
+plotly
+ # https://plot.ly/python
+ # a graphing library for making interactive, publication-quality graphs. See
+ # examples of statistic, scientific, 3D charts.
+
+tensorflow
+ # Wrapper around TensorFlow, the popular open source dataflow library for
+ # symbolic maths, machine learning, neural networks from Google.
+
+scikit-learn
+ # http://scikit-learn.org/
+ # Algorithms for machine learning including classification, regression and
+ # clustering algorithms with support vector machines, random  forests,
+ # gradient boosting, k-means and DBSCAN. Designed to interoperate NumPy and
+ # SciPy
+
+scikit-image
+ # http://scikit-image.org/
+ # Algorithms for image processing.
+
+sympy
+ # https://www.sympy.org/
+ # Symbolic mathematics / computer algebra.
+
+pytest
+ # https://docs.pytest.org/
+ # The pytest framework for writing tests. Scales to support complex functional
+ # testing for applications and libraries. (replaces nose)
+
+bash_kernel
+ # Bash kernel for Jupyter
+
+cython
+ # http://cython.org/
+ # C-Extensions for Python
+ # Cython is an optimising static compiler for both the Python programming
+ # language and the extended Cython programming language (based on Pyrex). It
+ # makes writing C extensions for Python as easy as Python itself.
+
+patsy
+ # https://patsy.readthedocs.io
+ # Package for describing statistical models (especially linear models, or models
+ # that have a linear component) and building design matrices. It is closely
+ # inspired by and compatible with the formula mini-language used in R and S.
+
+statsmodels
+ # http://www.statsmodels.org/
+ # Module that provides classes and functions for the estimation of many
+ # different statistical models, as well as for conducting statistical tests, and
+ # statistical data exploration.
+
+cloudpickle
+ # https://github.com/cloudpipe/cloudpickle
+ # cloudpickle makes it possible to serialize Python constructs not supported by
+ # the default pickle module from the Python standard library.
+
+dill
+ # https://github.com/uqfoundation/dill/
+ # dill extends python's pickle module for serializing and de-serializing python
+ # objects to the majority of the built-in python types
+
+numba
+ # https://numba.pydata.org/
+ # Numba gives you the power to speed up your applications with high performance
+ # functions written directly in Python. With a few annotations, array-oriented
+ # and math-heavy Python code can be just-in-time compiled to native machine
+ # instructions, similar in performance to C, C++ and Fortran, without having to
+ # switch languages or Python interpreters.
+
+bokeh
+ # https://bokeh.pydata.org/
+ # Bokeh is a Python interactive visualization library that targets modern web
+ # browsers for presentation. Its goal is to provide elegant, concise
+ # construction of novel graphics in the style of D3.js, and to extend this
+ # capability with high-performance interactivity over very large or streaming
+ # datasets. Bokeh can help anyone who would like to quickly and easily create
+ # interactive plots, dashboards, and data applications.
+
+RISE
+ # https://github.com/damianavila/RISE
+ # The Reveal.js Jupyter/IPython Slideshow Extension, also known as live_reveal.
+ # Quickly turn your Jupyter Notebooks into a live presentation.
+
+html5lib
+ # https://github.com/html5lib/html5lib-python
+ # Standards-compliant library for parsing and serializing HTML documents and
+ # fragments in Python.
+ # required for 'jupyter contrib nbextension install'
+
+simplecrypt
+ # https://pypi.python.org/pypi/simple-crypt
+ # Simple, secure encryption and decryption
+
+python-gnupg
+ # http://pythonhosted.org/python-gnupg/
+ # Allows Python programs to make use of the functionality provided by the GNU
+ # Privacy Guard (abbreviated GPG or GnuPG).
+
+qgrid
+ # https://github.com/quantopian/qgrid
+ # An interactive grid for sorting, filtering, and editing DataFrames in Jupyter
+ # notebooks
+
+
+# TODO consider these in a future release:
+# Theano
+# NLTK
+# PyBrain
+# Gensim

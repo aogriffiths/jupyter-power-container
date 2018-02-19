@@ -1,0 +1,8 @@
+FROM powercontainer:1
+ARG USR=poweruser
+USER root
+
+# Put experimental stuff here!
+# The run `make build2` and `make serve2`
+
+USER $USR
