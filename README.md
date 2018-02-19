@@ -3,7 +3,7 @@ Power Jupyter Container
 
 An veritable kitchen sink of things you can do with Jupyter notebooks. Like:
 
-* The obvious three kernels - **JU**lia, **PYT**hon and **R**. Plus a few more
+* The obvious three kernels, which **JUPYT**e**R** gets it's name from, **JU**lia, **PYT**hon and **R**. Plus a few more
 handy ones - Javascript, Bash and Ruby.
 * docker, gnugpg
 
