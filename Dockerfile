@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip and setuptools to the latest
-RUN pip3 install --upgrade pip setuptools
+RUN pip3 install --no-cache-dir --upgrade pip setuptools
 
 #========= JUPYTER =========#
 # https://jupyter.org/
@@ -118,22 +118,6 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
 
 
- #========= USER SETUP =========#
- ARG USR=poweruser
- ARG UID=1001
- ARG GRP=docker
- ARG GID=1001
-
- RUN useradd -m -s /bin/bash -N -u ${UID} ${USR}
-
- # Commenting out this approach for now
- # RUN addgroup -gid ${GID} ${GRP} \
- # && addgroup ${USR} ${GRP}
-
- ENV SHELL=/bin/bash
- ENV HOME=/home/${USR}
-
-
 #========= NODE.JS + KERNEL =========#
 # https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
 RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
@@ -144,7 +128,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN npm config set user 0 \
   & npm config set unsafe-perm true
-RUN npm install -g ijavascript
+RUN npm install -g ijavascript \
+ && npm cache clean --force
 
 #USER $USR
 RUN ijsinstall --install=global
@@ -173,9 +158,11 @@ RUN apt-get update && apt-get install -y \
 # CONSIDER: https://github.com/SciRuby
 
 
+
 #========= JULIA PACKAGES =========#
 ADD julia_packages.jl ./
-RUN julia julia_packages.jl
+# RUN julia julia_packages.jl
+
 
 
 #========= PYTHON MODULES =========#
@@ -209,7 +196,23 @@ RUN python3 -m bash_kernel.install
 # RUN jupyter kernelspec install .ipython/kernels/ruby
 
 
+
+#========= USER SETUP =========#
+ARG USR=poweruser
+ARG UID=1001
+ARG GRP=docker
+ARG GID=1001
+
+RUN useradd -m -s /bin/bash -N -u ${UID} ${USR}
+
+# Commenting out this approach for now
+# RUN addgroup -gid ${GID} ${GRP} \
+# && addgroup ${USR} ${GRP}
+
+ENV SHELL=/bin/bash
+ENV HOME=/home/${USR}
+
+
 USER $USR
-RUN iruby register --force
 WORKDIR $HOME
 EXPOSE 8888

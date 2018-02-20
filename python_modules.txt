@@ -130,7 +130,7 @@ html5lib
  # fragments in Python.
  # required for 'jupyter contrib nbextension install'
 
-simplecrypt
+simple-crypt
  # https://pypi.python.org/pypi/simple-crypt
  # Simple, secure encryption and decryption
 

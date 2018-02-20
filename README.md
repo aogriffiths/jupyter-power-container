@@ -3,8 +3,8 @@ Power Jupyter Container
 
 An veritable kitchen sink of things you can do with Jupyter notebooks. Like:
 
-* The obvious three kernels, which **JUPYT**e**R** gets it's name from, **JU**lia, **PYT**hon and **R**. Plus a few more
-handy ones - Javascript, Bash and Ruby.
+* **JU**lia, **PYT**hon and **R** - The obvious three kernels, which **JUPYT**e**R** gets it's name from.
+* Javascript, Bash and Ruby - A few more handy kernels.
 * docker, gnugpg
 
 Modules and packages:
@@ -43,7 +43,7 @@ Requirements:
 
 Steps:
 ```bash
-git clone https://github.com/aogriffiths/power-jupyter-container
+git clone https://github.com/aogriffiths/jupyter-power-container
 make
 make serve
 ```
@@ -86,3 +86,6 @@ technique for apt-get is [here](https://gist.github.com/dergachev/8441335).
   normally if it's not there.
   - Pro: Other containers won't use the proxy
   - Con: After the first run
+
+2. Install a transparent proxy for docker
+  - http://mrmagooey.github.io/articles/speeding-up-container-builds

@@ -14,14 +14,14 @@ Pkg.add("RDatasets")
  # most of the standard data sets that are available in the core of R as well as
  # datasets included with many of R's most popular packages.
 
-Pkg.add("HDF5")
+# Pkg.add("HDF5")
  # https://github.com/JuliaIO/HDF5.jl
  # HDF5 is a file format and library for storing and accessing data, commonly
  # used for scientific data. HDF5 files can be created and read by numerous
  # programming languages. This package provides an interface to the HDF5 library
  # for the Julia language.
 
-Pkg.add("TensorFlow")
+# Pkg.add("TensorFlow")
  # https://github.com/malmaud/TensorFlow.jl
  # Wrapper around TensorFlow, the popular open source dataflow library for
  # symbolic maths, machine learning, neural networks from Google.
