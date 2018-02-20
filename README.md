@@ -27,7 +27,8 @@ Requirements:
 
 Steps:
 ```bash
-docker pull power-jupyter-container
+docker pull northhighland/jupyter-power-container
+curl -O https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/Makefile
 make serve
 ```
 
