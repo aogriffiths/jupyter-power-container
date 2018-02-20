@@ -1,0 +1,1 @@
+docker run --rm -it   -v /var/run/docker.sock:/var/run/docker.sock --group-add 50 -v C:\Users\nv300826\allen_and_overy:/home/poweruser -p 88:8888 northhighland/jupyter-power-container:latest jupyter notebook --ip=0.0.0.0
