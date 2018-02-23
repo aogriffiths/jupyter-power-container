@@ -2,7 +2,7 @@
 #https://docs.docker.com/docker-cloud/builds/push-images/
 DOCKER_ID_USER:=northhighland
 CONTAINER_NAME:=jupyter-power-container
-VERSION:=1
+VERSION:=2
 HOME_DIR:=$(HOME)/$(CONTAINER_NAME)-home
 
 build:
@@ -24,6 +24,8 @@ shell: $(HOME_DIR)
 		-v $(HOME_DIR):/home/poweruser \
 		$(CONTAINER_NAME):latest \
 		bash
+
+run: serve
 
 serve: $(HOME_DIR)
 	mkdir -p .home

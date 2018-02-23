@@ -46,6 +46,10 @@ plotly
  # a graphing library for making interactive, publication-quality graphs. See
  # examples of statistic, scientific, 3D charts.
 
+cufflinks
+ # https://plot.ly/ipython-notebooks/cufflinks/
+ # A library for easy interactive Pandas charting with Plotly.
+
 tensorflow
  # Wrapper around TensorFlow, the popular open source dataflow library for
  # symbolic maths, machine learning, neural networks from Google.
