@@ -148,6 +148,22 @@ qgrid
  # An interactive grid for sorting, filtering, and editing DataFrames in Jupyter
  # notebooks
 
+fuzzywuzzy
+ # https://github.com/seatgeek/fuzzywuzzy
+ # "Fuzzy string matching like a boss". It uses Levenshtein Distance to calculate
+ # the differences between sequences in a simple-to-use package.
+
+jupyterlab
+ # https://github.com/jupyterlab/jupyterlab
+ # An extensible environment for interactive and reproducible computing, based
+ # on the Jupyter Notebook and Architecture.
+
+ipywidgets
+ # https://ipywidgets.readthedocs.io/
+ # ipywidgets are interactive HTML widgets for Jupyter notebooks and the IPython
+ # kernel. Notebooks come alive when interactive widgets are used. Users gain
+ # control of their data and can visualize changes in the data.
+
 
 # TODO consider these in a future release:
 # Theano

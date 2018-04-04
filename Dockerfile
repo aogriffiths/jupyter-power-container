@@ -183,11 +183,29 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-tk \
  && rm -rf /var/lib/apt/lists/*
 
+
+#  nbextensions (Notebook only)
 RUN jupyter contrib nbextension install --system
+
+# nbextensions_configurator  (Notebook only)
+# GUI for enabling nbextension other than widgetsnbextension
 RUN jupyter nbextensions_configurator enable --system
-RUN jupyter-nbextension install rise --py --system
-RUN jupyter-nbextension enable rise --py --system
+
+# rise (Notebook only)
+# presentations
+RUN jupyter nbextension install rise --py --system
+RUN jupyter nbextension enable rise --py --system
+
+# ipywidgets (Notebook and Lab)
+# Interactive HTML widgets for Jupyter notebooks.
+RUN jupyter nbextension enable widgetsnbextension --py --system
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
+
+# qgrid (Notebook and Lab)
+# Ediable tables
 RUN jupyter nbextension enable qgrid --py --system
+RUN jupyter labextension install qgrid
+
 
 ## EXTRA FOR BASH KERNEL
 RUN python3 -m bash_kernel.install
@@ -195,7 +213,13 @@ RUN python3 -m bash_kernel.install
 ## EXTRA FOR RUBY KERNEL
 # RUN jupyter kernelspec install .ipython/kernels/ruby
 
+## EXTRA FOR RUBY KERNEL
+# https://github.com/matplotlib/jupyter-matplotlib
+RUN pip3 install --no-cache-dir ipympl
+RUN jupyter nbextension enable ipympl --py --system
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
+RUN pip3 install --no-cache-dir colorlover
 
 #========= USER SETUP =========#
 ARG USR=poweruser

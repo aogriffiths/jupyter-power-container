@@ -17,6 +17,10 @@ push: build
 	docker tag $(CONTAINER_NAME):$(VERSION) $(DOCKER_ID_USER)/$(CONTAINER_NAME):$(VERSION)
 	docker push $(DOCKER_ID_USER)/$(CONTAINER_NAME):$(VERSION)
 
+
+pull:
+	docker pull $(DOCKER_ID_USER)/$(CONTAINER_NAME):latest
+
 shell: $(HOME_DIR)
 	docker run --rm -it \
 		-v /var/run/docker.sock:/var/run/docker.sock \
@@ -24,6 +28,15 @@ shell: $(HOME_DIR)
 		-v $(HOME_DIR):/home/poweruser \
 		$(CONTAINER_NAME):latest \
 		bash
+
+shell-root: $(HOME_DIR)
+	docker run --rm -it \
+		-v /var/run/docker.sock:/var/run/docker.sock \
+		-u root \
+		$(CONTAINER_NAME):latest \
+		bash
+
+		# -v $(HOME_DIR):/home/poweruser \
 
 run: serve
 
