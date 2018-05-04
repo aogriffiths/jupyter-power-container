@@ -32,7 +32,7 @@ curl -O https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/ma
 ```
 
 Windows Steps (Powershell):
-```powershell
+```bat
 docker pull northhighland/jupyter-power-container
 wget https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/run.bat -OutFile run.bat
 ./run.bat
