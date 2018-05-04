@@ -41,7 +41,6 @@ shell-root: $(HOME_DIR)
 run: serve
 
 serve: $(HOME_DIR)
-	mkdir -p .home
 	docker run --rm -it \
 	  -v /var/run/docker.sock:/var/run/docker.sock \
 		--group-add 50 \

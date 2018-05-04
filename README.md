@@ -23,13 +23,19 @@ This is the quick way.
 
 Requirements:
 * docker
-* make
 
-Steps:
+Mac Steps (Bash or similar):
 ```bash
 docker pull northhighland/jupyter-power-container
-curl -O https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/Makefile
-make serve
+curl -O https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/run.sh
+./run.sh
+```
+
+Windows Steps (Powershell):
+```powershell
+docker pull northhighland/jupyter-power-container
+wget https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/run.bat -OutFile run.bat
+./run.bat
 ```
 
 How to Make
@@ -45,48 +51,18 @@ Requirements:
 Steps:
 ```bash
 git clone https://github.com/aogriffiths/jupyter-power-container
-make
+make build
 make serve
 ```
 
-
-Commands
-========
-
+Notes:
 * `make build` - builds the power container image
 * `make serve` - runs a Jupyter notebooks webserver using the image
 * `make shell` - start a shell, for you to poke arround in, using the image
+
 
 See Also
 ========
 * [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 * [Datascience notebook](https://github.com/jupyter/docker-stacks/tree/master/datascience-notebook)
 * [Jupyter notebook tips tricks](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/)
-
-
-Speed Up Builds (WORK IN PROGRESS)
-================
-
-Docker caches the steps from your build file in the order they successfully
-complete, the trouble is if you change an early step in your Dockerfile the
-cache is invalidated  for all subsequent steps, and all the packages downloads
-they do will happen again.
-
-It is possible to cache apt-get packages, node.js npn modules, python pip
-packages, ruby gems, Julia packages (etc, etc) using the well known Squid proxy,
-so, when your docker build attempts to re-download them it will get a copy from
-the squid cache. This speeds the build up and saves bandwidth.
-
-There are a couple of ways do do it:
-
-1. Add commands to the top of your Dockerfile, to see if squid is running
-somewhere sensible (i.e. on a standard ip address and port) and then tell apt,
-pip, gem, npm and any other package managers to use it. An example of using this
-technique for apt-get is [here](https://gist.github.com/dergachev/8441335).
-  - Pro: The build process detects and uses the proxy if it's there and works
-  normally if it's not there.
-  - Pro: Other containers won't use the proxy
-  - Con: After the first run
-
-2. Install a transparent proxy for docker
-  - http://mrmagooey.github.io/articles/speeding-up-container-builds

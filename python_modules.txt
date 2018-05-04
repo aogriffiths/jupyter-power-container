@@ -31,7 +31,7 @@ jupyter_nbextensions_configurator
 
 matplotlib
  # https://matplotlib.org/
- # De-facto 2D plotting libary like line graphs, pie charts, histograms, etc and
+ # De-facto 2D plotting library like line graphs, pie charts, histograms, etc and
  # basic 3D plotting. Can export to PDF, SVG, JPG, PNG, BMP, GIF, etc.
  # Run `%matplotlib inline` to get inline plots, for `%matplotlib notebook` to
  # get interactive plots

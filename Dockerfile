@@ -219,7 +219,14 @@ RUN pip3 install --no-cache-dir ipympl
 RUN jupyter nbextension enable ipympl --py --system
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
+# Nice colours for charts
 RUN pip3 install --no-cache-dir colorlover
+
+# To speed up fuzzywuzzy
+RUN pip3 install --no-cache-dir python-Levenshtein
+
+# Progress bar
+RUN pip3 install --no-cache-dir tqdm
 
 #========= USER SETUP =========#
 ARG USR=poweruser
