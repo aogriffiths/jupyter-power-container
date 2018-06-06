@@ -1,5 +1,6 @@
 SET CONTAINER_NAME=jupyter-power-container
 SET HOME_DIR=%userprofile%\%CONTAINER_NAME%-home
+if not exist "%HOME_DIR%" mkdir %HOME_DIR%
 
 docker run --rm -it ^
    -v /var/run/docker.sock:/var/run/docker.sock ^
