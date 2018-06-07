@@ -45,8 +45,39 @@ wget https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/maste
     from -> http://0.0.0.0:8888/?token=...
     to ---> http://localhost:8888/?token=...
     ```
-* If you get `permission denied` errors when running `.\run.bat` it may be to do with docker drive mount settings. These can be reset via the windows docker setting screen and the "reset permissions" button.
-* Windows and docker can also run in to problems after a system suspend or hibernate. If you're stuck a fresh reboot might help.
+* For `permission denied` errors when running `.\run.bat` it may be to do with docker drive mount settings. These can be reset via the windows docker setting screen and the "reset permissions" button.
+* For `Error starting userland proxy` errors try
+    * stoping and deleting all running containers with
+      ```
+      docker stop $(docker ps -a -q)
+      docker rm $(docker ps -a -q)
+      ```
+      ; and if that doesn't work try
+    * restarting docker with
+      ```
+      restart-service *docker*
+      ```
+      ; and if that doesn't work try
+    * restarting your computer with
+      ```
+      Restart-Computer
+      ```
+* Windows and docker can also run in to problems after a system suspend or hibernate. If you're stuck a restarting your computer might help with this.
+
+## General Notes
+
+* If you haven't guessed already you access Jupyter though your browser with the URL given after running `run.bat` or `run.sh`, e.g. `http://0.0.0.0:8888/?token=...`.
+* Any files you create in Jupyter will be stored on your local machine under `$HOME\jupyter-power-container-home`.
+
+Examples
+========
+
+Some example data can be found [here](https://github.com/nickvdata/NH-sample-data-analysis). You can use it with:
+
+```
+cd $HOME/jupyter-power-container-home
+git clone https://github.com/nickvdata/NH-sample-data-analysis
+```
 
 
 Building
