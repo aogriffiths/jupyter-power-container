@@ -72,13 +72,14 @@ wget https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/maste
 Examples
 ========
 
-Some example data can be found [here](https://github.com/nickvdata/NH-sample-data-analysis). You can use it with:
+Some example data can be found [here](https://github.com/nickvdata/NH-sample-data-analysis). You can get it with:
 
 ```
 cd $HOME/jupyter-power-container-home
 git clone https://github.com/nickvdata/NH-sample-data-analysis
 ```
 
+Then, in Jupyter you can play with it by going to the `NH-sample-data-analysis` directory and opening the relevant notebooks.
 
 Building
 ========
