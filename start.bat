@@ -1,7 +1,8 @@
+@echo off
 SET CONTAINER_NAME=jupyter-power-container
 SET HOME_DIR=%userprofile%\%CONTAINER_NAME%-home
 if not exist "%HOME_DIR%" mkdir %HOME_DIR%
-SET TOKEN=ABC
+SET TOKEN=ABC123
 
 echo "docker container id:"
 docker run --rm -d ^
@@ -14,4 +15,5 @@ docker run --rm -d ^
 
 echo ""
 echo "URL:"
-echo "http://localhost:8888/?token="%TOKEN%
+echo http://localhost:8888/?token=%TOKEN%
+Start-Process -Path http://localhost:8888/?token=%TOKEN%
