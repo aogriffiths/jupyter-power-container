@@ -24,27 +24,40 @@ This is the quick way; it requires:
 * a shell (like bash on linux/max or powershell on Windows)
 
 ## Mac or Linux
-Using bash or similar:
+Set up with bash or similar:
 ```bash
 docker pull northhighland/jupyter-power-container
 curl -O https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/start.sh
-./start.sh
+curl -O https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/stop.sh
 ```
+
+Then you can run stop and start e.g.:
+```bash
+$ ./start.sh
+docker container id:
+c229f724d6095d8b0105f06230e99f208c00c61a9620805efe30b0c482fec4af
+
+URL:
+http://0.0.0.0:8888/?token=lXXKM43j0nxitMzElSl22QecsE1T6z0E
+
+$ ./stop.sh
+stoping jupyter-power-container docker containers:
+c229f724d609
+```
+
+See general notes below.
 
 ## Windows
 Using powershell (not cmd):
-```bat
+```PowerShell
 docker pull northhighland/jupyter-power-container
 wget https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/start.bat -OutFile start.bat
 .\start.bat
 ```
 
+See Windows specific and general notes below.
+
 ### Windows Notes:
-* Jupyter will suggest opening a url with the ip `0.0.0.0` but on Windows you may need to convert this to `localhost` e.g.
-    ```
-    from -> http://0.0.0.0:8888/?token=...
-    to ---> http://localhost:8888/?token=...
-    ```
 * For `permission denied` errors when running `.\start.bat` it may be to do with docker drive mount settings. These can be reset via the windows docker setting screen and the "reset permissions" button.
 * For `Error starting userland proxy` errors try
     * stoping and deleting all running containers with
@@ -66,7 +79,7 @@ wget https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/maste
 
 ## General Notes
 
-* If you haven't guessed already you access Jupyter though your browser with the URL given after running `start.bat` or `start.sh`, e.g. `http://0.0.0.0:8888/?token=...`.
+* If you haven't guessed already you access Jupyter though your browser with the URL given after running `start.bat` or `start.sh`, e.g. `http://0.0.0.0:8888/?token=lXXKM43j0nxitMzElSl22QecsE1T6z0E`.
 * Any files you create in Jupyter will be stored on your local machine under `$HOME\jupyter-power-container-home`.
 
 Examples
