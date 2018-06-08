@@ -16,4 +16,4 @@ docker run --rm -d ^
 echo ""
 echo "URL:"
 echo http://localhost:8888/?token=%TOKEN%
-Start-Process -Path http://localhost:8888/?token=%TOKEN%
+start "" http://localhost:8888/?token=%TOKEN%
