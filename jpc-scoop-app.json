@@ -1,0 +1,9 @@
+{
+    "version": "1.0",
+    "url": [
+      "https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/jpc-start.bat",
+      "https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/jpc-stop.bat"
+    ],
+    "extract_dir": "jupyter-power-container",
+    "bin": ["jpc-start.bat","jpc-stop.bat"]
+}
