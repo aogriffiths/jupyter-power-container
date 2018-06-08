@@ -27,16 +27,16 @@ This is the quick way; it requires:
 Using bash or similar:
 ```bash
 docker pull northhighland/jupyter-power-container
-curl -O https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/run.sh
-./run.sh
+curl -O https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/start.sh
+./start.sh
 ```
 
 ## Windows
 Using powershell (not cmd):
 ```bat
 docker pull northhighland/jupyter-power-container
-wget https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/run.bat -OutFile run.bat
-.\run.bat
+wget https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/master/start.bat -OutFile start.bat
+.\start.bat
 ```
 
 ### Windows Notes:
@@ -45,7 +45,7 @@ wget https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/maste
     from -> http://0.0.0.0:8888/?token=...
     to ---> http://localhost:8888/?token=...
     ```
-* For `permission denied` errors when running `.\run.bat` it may be to do with docker drive mount settings. These can be reset via the windows docker setting screen and the "reset permissions" button.
+* For `permission denied` errors when running `.\start.bat` it may be to do with docker drive mount settings. These can be reset via the windows docker setting screen and the "reset permissions" button.
 * For `Error starting userland proxy` errors try
     * stoping and deleting all running containers with
       ```
@@ -66,7 +66,7 @@ wget https://raw.githubusercontent.com/aogriffiths/jupyter-power-container/maste
 
 ## General Notes
 
-* If you haven't guessed already you access Jupyter though your browser with the URL given after running `run.bat` or `run.sh`, e.g. `http://0.0.0.0:8888/?token=...`.
+* If you haven't guessed already you access Jupyter though your browser with the URL given after running `start.bat` or `start.sh`, e.g. `http://0.0.0.0:8888/?token=...`.
 * Any files you create in Jupyter will be stored on your local machine under `$HOME\jupyter-power-container-home`.
 
 Examples
@@ -80,6 +80,11 @@ git clone https://github.com/nickvdata/NH-sample-data-analysis
 ```
 
 Then, in Jupyter you can play with it by going to the `NH-sample-data-analysis` directory and opening the relevant notebooks.
+
+Architecture
+============
+
+
 
 Building
 ========
